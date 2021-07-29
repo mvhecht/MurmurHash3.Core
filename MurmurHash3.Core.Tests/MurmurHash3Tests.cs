@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Text;
-using Grassfed.MurmurHash3;
+using MurmurHash3.Core;
 using NUnit.Framework;
 
-namespace Grassfed.MurmurHash3.Tests
+namespace MurmurHash3.Core.Tests
 {
     public class MurmurHash3Tests
     {

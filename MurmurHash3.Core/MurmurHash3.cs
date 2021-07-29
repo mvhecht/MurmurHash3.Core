@@ -1,13 +1,13 @@
 ﻿using System;
 
-namespace Grassfed.MurmurHash3
+namespace MurmurHash3.Core
 {
     /// <summary>
     /// <para>
     ///     MurmurHash3 x64 128-bit variant.
     /// </para>
     /// <para>
-    ///     Project home: https://github.com/judwhite/Grassfed.MurmurHash3
+    ///     Project home: https://github.com/judwhite/MurmurHash3.Core
     /// </para>
     /// <para>
     ///     See https://github.com/aappleby/smhasher/wiki/MurmurHash3 for more information. Port of 

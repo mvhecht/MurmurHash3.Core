@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Grassfed.MurmurHash3.Tests
+namespace MurmurHash3.Core.Tests
 {
     public class CRC32
     {

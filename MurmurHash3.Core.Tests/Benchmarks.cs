@@ -3,7 +3,7 @@ using System.Diagnostics;
 using System.Security.Cryptography;
 using NUnit.Framework;
 
-namespace Grassfed.MurmurHash3.Tests
+namespace MurmurHash3.Core.Tests
 {
     public class Benchmarks
     {

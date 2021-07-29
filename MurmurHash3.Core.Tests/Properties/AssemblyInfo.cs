@@ -4,11 +4,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Grassfed.MurmurHash3.Tests")]
+[assembly: AssemblyTitle("MurmurHash3.Core.Tests")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Grassfed.MurmurHash3.Tests")]
+[assembly: AssemblyProduct("MurmurHash3.Core.Tests")]
 [assembly: AssemblyCopyright("Copyright © Jud White 2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
