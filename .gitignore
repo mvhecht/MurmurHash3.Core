@@ -13,3 +13,4 @@ obj/
 build/
 nuget-tests/
 .vs/
+.idea/

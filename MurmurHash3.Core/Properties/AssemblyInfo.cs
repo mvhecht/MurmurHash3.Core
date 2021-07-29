@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("MurmurHash3.Core")]
-[assembly: AssemblyCopyright("Copyright © Jud White 2017")]
+[assembly: AssemblyCopyright("Copyright © M V Hecht 2021")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -19,7 +19,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("cdbe769b-e4a5-489f-9e71-10ed2a0991ed")]
+[assembly: Guid("cdbe769b-e4b5-489f-9e71-10ed2a0991ed")]
 
 // Version information for an assembly consists of the following four values:
 //

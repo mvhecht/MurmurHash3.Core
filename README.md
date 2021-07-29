@@ -1,5 +1,4 @@
 <p>
-<img align="left" width="64" height="64" src="http://judsonwhite.com/images/MurmurHash3.Core.png" />
 <h2>MurmurHash3.Core</h2>
 </p>
 
@@ -7,11 +6,8 @@
 
 MurmurHash3 x64 128-bit - a fast, non-cryptographic hash function.
 
-Port of Austin Appleby's implementation for C#. See https://github.com/aappleby/smhasher/wiki/MurmurHash3 for more information, and [here](https://github.com/aappleby/smhasher/blob/61a0530f28277f2e850bfc39600ce61d02b518de/src/MurmurHash3.cpp#L255) for the original source.
+Conversion to .net 5 of Jud White's port to C# of Austin Appleby's implementation. See https://github.com/aappleby/smhasher/wiki/MurmurHash3 for more information, and [here](https://github.com/aappleby/smhasher/blob/61a0530f28277f2e850bfc39600ce61d02b518de/src/MurmurHash3.cpp#L255) for the original source.
 
-## Install
-
-`PM> Install-Package MurmurHash3.Core`
 
 ## Usage
 

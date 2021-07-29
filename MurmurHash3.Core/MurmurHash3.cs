@@ -7,25 +7,25 @@ namespace MurmurHash3.Core
     ///     MurmurHash3 x64 128-bit variant.
     /// </para>
     /// <para>
-    ///     Project home: https://github.com/judwhite/MurmurHash3.Core
+    ///     Project home: https://github.com/mvhecht/MurmurHash3.Core
     /// </para>
     /// <para>
     ///     See https://github.com/aappleby/smhasher/wiki/MurmurHash3 for more information. Port of 
     ///     https://github.com/aappleby/smhasher/blob/61a0530f28277f2e850bfc39600ce61d02b518de/src/MurmurHash3.cpp#L255
     /// </para>
     /// </summary>
-    public class MurmurHash3
+    public static class MurmurHash3
     {
         /// <summary>Gets the size, in bits, of the computed hash code.</summary>
         /// <returns>The size, in bits, of the computed hash code.</returns>
-        public int HashSize => 128;
+        public static int HashSize => 128;
 
         /// <summary>Computes the hash value for the specified byte array.</summary>
         /// <param name="buffer">The input to compute the hash code for.</param>
         /// <returns>The computed hash code.</returns>
         /// <exception cref="T:System.ArgumentNullException">
         /// <paramref name="buffer" /> is null.</exception>
-        public byte[] ComputeHash(byte[] buffer)
+        public static byte[] ComputeHash(byte[] buffer)
         {
             return ComputeHash(buffer, 0, buffer.Length);
         }
@@ -41,7 +41,7 @@ namespace MurmurHash3.Core
         /// <paramref name="buffer" /> is null.</exception>
         /// <exception cref="T:System.ArgumentOutOfRangeException">
         /// <paramref name="offset" /> is out of range. This parameter requires a non-negative number.</exception>
-        public unsafe byte[] ComputeHash(byte[] buffer, int offset, int count)
+        public static unsafe byte[] ComputeHash(byte[] buffer, int offset, int count)
         {
             if (buffer == null)
                 throw new ArgumentNullException(nameof(buffer));
@@ -64,7 +64,7 @@ namespace MurmurHash3.Core
             fixed (byte* pbuffer = buffer)
             {
                 byte* pinput = pbuffer + offset;
-                ulong* body = (ulong*)pinput;
+                ulong* body = (ulong*) pinput;
 
                 ulong k1;
                 ulong k2;
@@ -102,22 +102,22 @@ namespace MurmurHash3.Core
                 switch (count & 15)
                 {
                     case 15:
-                        k2 ^= (ulong)tail[14] << 48;
+                        k2 ^= (ulong) tail[14] << 48;
                         goto case 14;
                     case 14:
-                        k2 ^= (ulong)tail[13] << 40;
+                        k2 ^= (ulong) tail[13] << 40;
                         goto case 13;
                     case 13:
-                        k2 ^= (ulong)tail[12] << 32;
+                        k2 ^= (ulong) tail[12] << 32;
                         goto case 12;
                     case 12:
-                        k2 ^= (ulong)tail[11] << 24;
+                        k2 ^= (ulong) tail[11] << 24;
                         goto case 11;
                     case 11:
-                        k2 ^= (ulong)tail[10] << 16;
+                        k2 ^= (ulong) tail[10] << 16;
                         goto case 10;
                     case 10:
-                        k2 ^= (ulong)tail[9] << 8;
+                        k2 ^= (ulong) tail[9] << 8;
                         goto case 9;
                     case 9:
                         k2 ^= tail[8];
@@ -127,25 +127,25 @@ namespace MurmurHash3.Core
                         h2 ^= k2;
                         goto case 8;
                     case 8:
-                        k1 ^= (ulong)tail[7] << 56;
+                        k1 ^= (ulong) tail[7] << 56;
                         goto case 7;
                     case 7:
-                        k1 ^= (ulong)tail[6] << 48;
+                        k1 ^= (ulong) tail[6] << 48;
                         goto case 6;
                     case 6:
-                        k1 ^= (ulong)tail[5] << 40;
+                        k1 ^= (ulong) tail[5] << 40;
                         goto case 5;
                     case 5:
-                        k1 ^= (ulong)tail[4] << 32;
+                        k1 ^= (ulong) tail[4] << 32;
                         goto case 4;
                     case 4:
-                        k1 ^= (ulong)tail[3] << 24;
+                        k1 ^= (ulong) tail[3] << 24;
                         goto case 3;
                     case 3:
-                        k1 ^= (ulong)tail[2] << 16;
+                        k1 ^= (ulong) tail[2] << 16;
                         goto case 2;
                     case 2:
-                        k1 ^= (ulong)tail[1] << 8;
+                        k1 ^= (ulong) tail[1] << 8;
                         goto case 1;
                     case 1:
                         k1 ^= tail[0];
@@ -158,8 +158,8 @@ namespace MurmurHash3.Core
             }
 
             // finalization
-            h1 ^= (ulong)count;
-            h2 ^= (ulong)count;
+            h1 ^= (ulong) count;
+            h2 ^= (ulong) count;
 
             h1 += h2;
             h2 += h1;
@@ -173,11 +173,12 @@ namespace MurmurHash3.Core
             var ret = new byte[16];
             fixed (byte* pret = ret)
             {
-                var ulpret = (ulong*)pret;
+                var ulpret = (ulong*) pret;
 
                 ulpret[0] = Reverse(h1);
                 ulpret[1] = Reverse(h2);
             }
+
             return ret;
         }
 

@@ -16,8 +16,7 @@ namespace MurmurHash3.Core.Tests
         [Test]
         public void Benchmark_MurmurHash3_x64_128_512()
         {
-            var h = new MurmurHash3();
-            Benchmark(h.ComputeHash, 512);
+            Benchmark(MurmurHash3.ComputeHash, 512);
         }
 
         [Test]
@@ -57,8 +56,7 @@ namespace MurmurHash3.Core.Tests
         [Test]
         public void Benchmark_MurmurHash3_x64_128_4096()
         {
-            var h = new MurmurHash3();
-            Benchmark(h.ComputeHash, 4096);
+            Benchmark(MurmurHash3.ComputeHash, 4096);
         }
 
         [Test]
@@ -98,8 +96,7 @@ namespace MurmurHash3.Core.Tests
         [Test]
         public void Benchmark_MurmurHash3_x64_128_8192()
         {
-            var h = new MurmurHash3();
-            Benchmark(h.ComputeHash, 8192);
+            Benchmark(MurmurHash3.ComputeHash, 8192);
         }
 
         [Test]

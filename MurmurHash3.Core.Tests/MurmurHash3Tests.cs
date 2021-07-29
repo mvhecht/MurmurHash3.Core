@@ -60,8 +60,6 @@ namespace MurmurHash3.Core.Tests
                 new TestCase { Value = "ABCDEFGHIJKLMNOPQRSTUVWXYZ", ExpectedHash = "65e611fed09fced7355e36e45b7fd9e4" },
             };
 
-            var h = new MurmurHash3();
-
             foreach (var c in cases)
             {
                 var bytes = Encoding.UTF8.GetBytes(c.Value);
@@ -69,9 +67,9 @@ namespace MurmurHash3.Core.Tests
                 // Act
                 byte[] val;
                 if (c.Offset == 0 && c.Length == 0)
-                    val = h.ComputeHash(bytes);
+                    val = MurmurHash3.ComputeHash(bytes, 0, bytes.Length);
                 else
-                    val = h.ComputeHash(bytes, c.Offset, c.Length);
+                    val = MurmurHash3.ComputeHash(bytes, c.Offset, c.Length);
 
                 // Assert
                 var got = ByteArrayToHexString(val);
